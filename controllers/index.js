@@ -1,9 +1,15 @@
-// Import just the router express
 const router = require('express').Router();
-// Import the index.js from 'api' folder
+const homeRoutes = require('./homeRoutes');
 const apiRoutes = require('./api');
+const profileRoutes = require('./profileRoutes');
 
-// When a request is made to the /api route, it will be directed to the index.js in the 'api' folder.
+// Render the login page
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'Login' });
+});
+
+router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
+router.use('/', profileRoutes);
 
 module.exports = router;
