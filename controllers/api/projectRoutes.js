@@ -1,8 +1,7 @@
 const router = require('express').Router();
-// Import the Project model from the models folder
 const { Project } = require('../../models');
 
-// If a POST request is made to /api/projects, a new project is created. If there is an error, the function returns with a 400 error. 
+// Create a new project
 router.post('/', async (req, res) => {
   try {
     const newProject = await Project.create({
@@ -16,7 +15,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// If a DELETE request is made to /api/projects/:id, that project is deleted. 
+// Delete a project
 router.delete('/:id', async (req, res) => {
   try {
     const projectData = await Project.destroy({
@@ -32,6 +31,27 @@ router.delete('/:id', async (req, res) => {
     }
 
     res.status(200).json(projectData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Render the project details page
+router.get('/:id', async (req, res) => {
+  try {
+    const projectData = await Project.findByPk(req.params.id);
+
+    if (!projectData) {
+      res.status(404).json({ message: 'No project found with this id!' });
+      return;
+    }
+
+    const project = projectData.get({ plain: true });
+
+    res.render('project', { 
+      project, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
     res.status(500).json(err);
   }
