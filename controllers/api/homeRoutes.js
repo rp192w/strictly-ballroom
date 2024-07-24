@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const { Project } = require('../models');
+const { Project } = require('../../models');
 
-// Render the homepage with all projects
 router.get('/', async (req, res) => {
   try {
     const projectData = await Project.findAll();
