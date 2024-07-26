@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <link rel="stylesheet" href="../../styles/styles.css">
-    <link rel="stylesheet" href="../css/tabs.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    {{{body}}}
     <nav class="navbar is-info">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#">
-                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-            </a>
             <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
                 <span></span>
                 <span></span>
@@ -24,13 +19,7 @@
         </div>
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start is-link">
-                <a class="navbar-item" href="https://github.com/BulmaTemplates/bulma-templates">
-                    Home
-                </a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/documentation/overview/start/">
-                        Docs
-                    </a>
                     <div class="navbar-dropdown is-boxed">
                         {{#each items}}
                             <a class="navbar-item" href="{{url}}">
@@ -49,21 +38,11 @@
              <div class="navbar-item">
                         <div class="field is-grouped">
                             <p class="control">
-                                <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="#" target="_blank" href="https://twitter.com/intent/tweet?text=get free bulma templates:;url=https://github.com/BulmaTemplates/bulma-templates">
-                                    <span class="icon">
-                                        <i class="fab fa-twitter"></i>
-                                    </span>
-                                    <span>
-                                        Tweet
-                                    </span>
-                                </a>
-                            </p>
-                            <p class="control">
-                                <a class="button is-primary" href="https://github.com/BulmaTemplates/bulma-templates">
+                                <a class="button is-primary" href="/login">
                                     <span class="icon">
                                         <i class="fas fa-download"></i>
                                     </span>
-                                    <span>Download</span>
+                                    <span>Login</span>
                                 </a>
                             </p>
                         </div>
@@ -71,15 +50,10 @@
                 </div>
             </div>
         </nav>
-        <section class="hero is-info">
+        <section class="header1">
             <div class="hero-body">
-                <div class="container">
-                    <h1 class="title">
-                    Tabs
-                    </h1>
-                    <h2 class="subtitle">
-                    example
-                    </h2>
+                <div>
+                            <img src="/images/strictly-ballroom-solid.svg" alt="Strictly Ballroom" class="logo-header">
                 </div>
             </div>
             <div class="tabs is-boxed is-centered main-menu" id="nav">
@@ -110,6 +84,7 @@
                     </li>
                 </ul>
             </div>
+            {{{body}}}
             <div class="tab-content">
                 <div class="tab-pane" id="pane-1" style="display: none;">
                     <figure>
