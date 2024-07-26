@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const homeRoutes = require('./homeRoutes');
+const homeRoutes = require('./api/homeRoutes');
 const apiRoutes = require('./api');
-const profileRoutes = require('./profileRoutes');
+const profileRoutes = require('./api/profileRoutes');
 
 // Render the login page
 router.get('/login', (req, res) => {
