@@ -48,10 +48,10 @@ app.use(routes);
 // Use the error handler
 app.use(errorHandler);
 
-//use helmet
+// Use helmet
 app.use(helmet());
 
-//use thhe rate limiter
+// Use the rate limiter
 app.use(limiter);
 
 // Sync database and start the server
