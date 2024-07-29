@@ -1,17 +1,3 @@
-<h1>Your Projects</h1>
-<ul>
-  {{#each projects}}
-    <li>{{this.name}} <form action="/api/projects/{{this.id}}" method="POST"><button type="submit">Delete</button></form></li>
-  {{/each}}
-</ul>
-
-<h1>Create a New Project</h1>
-<form action="/api/projects" method="POST">
-  <input type="text" name="name" placeholder="Project Title" required>
-  <textarea name="description" placeholder="Project Description" required></textarea>
-  <input type="number" name="needed_funding" placeholder="Funding Goal" required>
-  <button type="submit">Create Project</button>
-</form>
 
 <form action="/api/users/logout" method="POST">
   <button type="submit">Logout</button>
