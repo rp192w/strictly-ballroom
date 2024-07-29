@@ -1,11 +1,8 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
   try {
-    const projectData = await Project.findAll();
-    const projects = projectData.map((project) => project.get({ plain: true }));
-    res.render('homepage', { projects, logged_in: req.session.logged_in });
+  res.render('homepage', { title: 'About Us', logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
