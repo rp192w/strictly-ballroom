@@ -1,7 +1,8 @@
-
-
-<ul>
-  {{#each projects}}
-    <li><a href="/api/projects/{{this.id}}">{{this.name}}</a></li>
-  {{/each}}
-</ul>
+{{#if logged_in}}
+  <a href="/profile">Profile</a>
+  <form action="/api/users/logout" method="POST">
+    <button type="submit">Logout</button>
+  </form>
+{{else}}
+  <a href="/login">Login</a>
+{{/if}}
