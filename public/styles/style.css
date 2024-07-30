@@ -52,6 +52,10 @@
         padding: 20px;
         padding-top: 60px;
     }
+    .image {
+        max-width: 50%;
+        
+    }
 }
     .tabs {
         --bulma-tabs-border-bottom-color: hsl(0, 0%, 41%);
@@ -114,3 +118,4 @@
     .button {
         background-color: #ff1900;
     }
+
