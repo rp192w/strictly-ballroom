@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -26,14 +27,15 @@ const sess = {
     db: sequelize
   })
 };
-app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
 // Set up Handlebars.js engine
 const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
 
 // Middleware to parse JSON and urlencoded form data
 app.use(express.json());
@@ -53,6 +55,11 @@ app.use(helmet());
 
 // Use the rate limiter
 app.use(limiter);
+
+// Middleware to handle 404 errors
+app.use((req, res, next) => {
+  res.status(404).render('404', { title: 'Page Not Found' });
+});
 
 // Sync database and start the server
 sequelize.sync({ force: false }).then(() => {
