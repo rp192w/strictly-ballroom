@@ -25,6 +25,7 @@ router.get('/contact', (req, res) => {
   res.render('contact', {
     studioName: "Strictly Ballroom - Utah’s #1 Dance Studio",
     description: "Home of National Champions, World Champions, British Open Finalists, DWTS Pros, DWTS Junior Pros, and SYTYCD winners & finalists!",
+    hours: "Monday - Friday: 8:00am - 9:00pm",
     address: "569 N 1200 W, Orem, Utah 84057",
     phone: "555-555-5555",
     email: "dance@strictlyballroomutah.com"
