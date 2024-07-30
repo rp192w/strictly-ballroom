@@ -15,6 +15,9 @@
     margin-bottom: -1px !important;
     position: relative;
     }
+    .tabs span {
+        color: white;
+    }
     .tab-content {
     color: #000;
     background-color: rgb(84, 84, 84);
