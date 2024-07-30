@@ -21,7 +21,13 @@ router.get('/calendar', (req, res) => {
 
 // Contact page route
 router.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact Us', logged_in: req.session.logged_in });
+  res.render('contact', {
+    studioName: "Strictly Ballroom - Utah’s #1 Dance Studio",
+    description: "Home of National Champions, World Champions, British Open Finalists, DWTS Pros, DWTS Junior Pros, and SYTYCD winners & finalists!",
+    address: "569 N 1200 W, Orem, Utah 84057",
+    phone: "555-555-5555",
+    email: "dance@strictlyballroomutah.com"
+});
 });
 
 // FAQ page route
