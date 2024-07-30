@@ -6,7 +6,6 @@
         background-color: #000;
     }
     .logo-header {
-
         padding: 3.5rem;
     }
     .header1 {
@@ -17,11 +16,43 @@
     position: relative;
     }
     .tab-content {
-    padding: 60px;
-    top: 197px;
     color: #000;
     background-color: rgb(84, 84, 84);
     }
+@media (min-width: 319px) and (max-width: 375px) {
+    .tab-content {
+        padding-top: 20px;
+    }
+    .logo-header {
+        padding: 1.5rem;
+    }
+}
+    /* 375px - 425px */
+@media (min-width: 375px) and (max-width: 424px) {
+    .tab-content {
+        padding: 15px;
+    }
+    .logo-header {
+        padding: 1.5rem;
+    }
+}
+/* 425px - 768px */
+@media (min-width: 425px) and (max-width: 767px) {
+    .tab-content {
+        padding: 15px;
+        padding-top: 25px;
+    }
+    .logo-header {
+        padding: 2rem;
+    }
+}
+/* 768px and above */
+@media (min-width: 768px) {
+    .tab-content {
+        padding: 20px;
+        padding-top: 60px;
+    }
+}
     .tabs {
         --bulma-tabs-border-bottom-color: hsl(0, 0%, 41%);
     }
@@ -30,7 +61,7 @@
     }
     .tab-pane.is-active {
     display: block;
-    width: 50%;
+    width: 70%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
