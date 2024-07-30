@@ -20,7 +20,10 @@
     padding: 60px;
     top: 197px;
     color: #000;
-    background-color: white;
+    background-color: rgb(84, 84, 84);
+    }
+    .tabs {
+        --bulma-tabs-border-bottom-color: hsl(0, 0%, 41%);
     }
     .tab-pane {
     display: none;
@@ -37,6 +40,9 @@
     }
     .content h1{
     color: var(--red)
+    }
+    .content p, ul{
+        color: white;
     }
     .is-active {
     display: initial;
