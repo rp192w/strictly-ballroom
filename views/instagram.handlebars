@@ -1,37 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-</head>
-<body>
-  <h1>Instagram Feed</h1>
-  <div id="instagram-feed"></div>
-
-  <script>
-    async function fetchInstagramFeed() {
-      try {
-        const response = await fetch('/instagram');
-        const media = await response.json();
-        const feedContainer = document.getElementById('instagram-feed');
-
-        media.forEach(item => {
-          const mediaElement = document.createElement('div');
-          mediaElement.innerHTML = `
-            <a href="${item.permalink}" target="_blank">
-              <img src="${item.media_url}" alt="${item.caption}">
-            </a>
-            <p>${item.caption}</p>
-          `;
-          feedContainer.appendChild(mediaElement);
-        });
-      } catch (error) {
-        console.error('Error fetching Instagram feed:', error);
-      }
+  <title>Instagram Feed</title>
+  <style>
+    .instagram-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 50px;
     }
 
-    fetchInstagramFeed();
-  </script>
-</body>
-</html>
+    .instagram-item {
+      width: 200px;
+      text-align: center;
+    }
+
+    .instagram-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .instagram-caption {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #dfdfdf;
+      word-wrap: break-word;
+    }
+    h1 {
+      text-align: center;
+      color: #d70000;
+      font-size: 5rem;
+      border-bottom: 2px solid #8d0000; /* Add a line below the text */
+      padding-bottom: 10px; /* Add space between the text and the line */
+    }
+  </style>
+  <h1>Live Instagram Feed</h1>
+<body>
+  <div class="instagram-container">
+    {{#each mediaData}}
+      <div class="instagram-item">
+        <img src="{{this.media_url}}" alt="{{this.caption}}" class="instagram-image">
+        <p class="instagram-caption">{{this.caption}}</p>
+      </div>
+    {{/each}}
+  </div>

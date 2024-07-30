@@ -1,6 +1,7 @@
 const router = require('express').Router();
-// const { getInstagramMedia } = require('../instagramcontroller');
+const instagramRoutes = require('../instagramController');
 
+// Home page route
 router.get('/', async (req, res) => {
   try {
     res.render('about', { title: 'About Us', logged_in: req.session.logged_in });
@@ -40,14 +41,7 @@ router.get('/rentspace', (req, res) => {
   res.render('rentspace', { title: 'Rent Space', logged_in: req.session.logged_in });
 });
 
-// // Instagram page route
-// router.get('/instagram', async (req, res) => {
-//   try {
-//     const media = await getInstagramMedia();
-//     res.render('instagram', { title: 'Instagram', media, logged_in: req.session.logged_in });
-//   } catch (error) {
-//     res.status(500).json({ error: 'Failed to fetch Instagram media' });
-//   }
-// });
+// Instagram page route
+router.get('/instagram', instagramRoutes.getInstagramPhotos);
 
 module.exports = router;
