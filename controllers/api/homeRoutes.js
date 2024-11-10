@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const instagramRoutes = require('../instagramController');
+// const instagramRoutes = require('../instagramController');
 
 // Home page route
 router.get('/', async (req, res) => {
@@ -23,11 +23,10 @@ router.get('/calendar', (req, res) => {
 // Contact page route
 router.get('/contact', (req, res) => {
   res.render('contact', {
-    studioName: "Strictly Ballroom - Utah’s #1 Dance Studio",
-    description: "Home of National Champions, World Champions, British Open Finalists, DWTS Pros, DWTS Junior Pros, and SYTYCD winners & finalists!",
+    studioName: "Strictly Ballroom Events Center",
     hours: "Monday - Friday: 8:00am - 9:00pm",
     address: "569 N 1200 W, Orem, Utah 84057",
-    phone: "555-555-5555",
+    phone: "801-770-1555",
     email: "dance@strictlyballroomutah.com"
 });
 });
@@ -42,7 +41,9 @@ router.get('/rentspace', (req, res) => {
   res.render('rentspace', { title: 'Rent Space', logged_in: req.session.logged_in });
 });
 
-// Instagram page route
-router.get('/instagram', instagramRoutes.getInstagramPhotos);
+// Gallery page route
+router.get('/gallery', (req, res) => {
+  res.render('gallery', { title: 'Gallery' });
+});
 
 module.exports = router;

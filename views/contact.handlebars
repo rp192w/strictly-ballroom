@@ -1,13 +1,82 @@
-<div class="tab-content">
+<style>
+/* Center the Contact Us title */
+.content h1 {
+    text-align: center;
+}
+
+/* Contact info layout */
+.contact-info {
+    display: flex;
+    gap: 2rem; /* Space between text and map */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allows content to wrap on small screens */
+    margin-top: 20px; /* Optional: Adds some space above the contact info */
+}
+
+/* Ensure the iframe scales on smaller screens */
+.map-content iframe {
+    max-width: 100%; /* Ensures iframe scales well on smaller screens */
+    height: 350px; /* Set a fixed height for the map */
+}
+
+/* Style for the text content */
+.text-content {
+    flex: 1; /* Allow text content to take up available space */
+    max-width: 500px; /* Optional: Limit text content width */
+}
+
+/* Make the "Phone", "Email", etc. headers bold and red */
+.content strong {
+    font-weight: bold; /* Make the text bold */
+    color: #ed1b24ff; /* Set the text color to red */
+}
+
+/* Ensure the card text wraps and does not overflow */
+.card .content {
+    word-wrap: break-word; /* Prevent text from overflowing */
+    overflow-wrap: break-word; /* Prevent text from overflowing */
+    hyphens: auto; /* Automatically add hyphens if needed */
+}
+
+/* Media query to make layout responsive */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack text and map vertically on small screens */
+        align-items: center; /* Center the items */
+    }
+
+    .map-content iframe {
+        height: 250px; /* Reduce iframe size for smaller screens */
+    }
+
+    .card .content {
+        padding-left: 10px; /* Optionally add some padding for small screens */
+        padding-right: 10px; /* Optional: Add padding on smaller screens */
+    }
+}
+
+</style>
+
+
   <div class="tab-pane is-active" id="pane-1" style="display: block;">
     <div class="content">
       <h1>Contact Us</h1>
-      <p>{{description}}</p>
-      <p><strong>Phone:</strong> {{phone}}</p>
-      <p><strong>Email:</strong> {{email}}</p>
-      <p><strong>Hours:</strong> {{hours}}</p>
-      <p><strong>Address:</strong> {{address}}</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042.5695941092736!2d-111.7248774!3d40.307514600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d84d1daf64405%3A0xc204db95ef74fdce!2s569%20N%201200%20W%2C%20Orem%2C%20UT%2084057!5e0!3m2!1sen!2sus!4v1722311334625!5m2!1sen!2sus" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="contact-info">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p><strong>Phone:</strong> {{phone}} </p>
+              <p><strong>Email:</strong> {{email}}</p>
+              <p><strong>Hours:</strong> {{hours}}</p>
+              <p><strong>Address:</strong> {{address}}</p>
+            </div>
+          </div>  
+        </div>
+        <div class="map-content">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042.5695941092736!2d-111.7248774!3d40.307514600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d84d1daf64405%3A0xc204db95ef74fdce!2s569%20N%201200%20W%2C%20Orem%2C%20UT%2084057!5e0!3m2!1sen!2sus!4v1722311334625!5m2!1sen!2sus" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+

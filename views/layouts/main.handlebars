@@ -6,12 +6,41 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <style>
+        /* Mobile-specific styles */
+        @media screen and (max-width: 768px) {
+            /* Stack the navigation items vertically */
+            .main-menu ul {
+                display: block;
+                padding-left: 0;  /* Remove default padding */
+            }
+
+            .main-menu li {
+                width: 100%;  /* Make each list item take up full width */
+                text-align: center; /* Center the text */
+            }
+        }
+
+        /* Default styles for larger screens */
+        @media screen and (min-width: 769px) {
+            .main-menu ul {
+                display: flex; /* Flexbox for horizontal layout */
+                justify-content: space-around;
+                padding-left: 0;
+            }
+
+            .main-menu li {
+                width: auto; /* Let the items take their natural width */
+            }
+        }
+        .border {
+            border-bottom: 5px solid #ed1b24ff; /* Adjust border thickness and color as desired */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar is-info">
         <div id="navbarExampleTransparentExample" class="navbar-menu is-active">
-
             <div class="navbar-end">
                 <div class="field is-grouped">
                     <p class="control">
@@ -41,7 +70,7 @@
                 <img src="/images/strictly-ballroom-solid.svg" alt="Strictly Ballroom" class="logo-header">
             </div>
         </div>
-        <div class="tabs is-boxed is-centered main-menu" id="nav">
+        <div class="tabs is-boxed is-centered main-menu border" id="nav">
             <ul>
                 <li data-target="pane-1" id="1">
                     <a href="/about">
@@ -69,17 +98,15 @@
                     </a>
                 </li>
                 <li data-target="pane-5" id="5">
-                    <a href="/instagram">
-                        <span>Instagram</span>
+                    <a href="/gallery">
+                        <span>Gallery</span>
                     </a>
                 </li>
             </ul>
         </div>
-
         <div class="tab-content">
             {{{body}}}
-            <div class="tab-pane" style="display: none;">
-            </div>
+            <div class="tab-pane" style="display: none;"></div>
         </div>
     </section>
 </body>
