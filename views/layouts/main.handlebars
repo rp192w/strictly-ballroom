@@ -34,7 +34,11 @@
             }
         }
         .border {
-            border-bottom: 5px solid #ed1b24ff; /* Adjust border thickness and color as desired */
+            border-bottom: 7px solid #ed1b24ff; /* Adjust border thickness and color as desired */
+        }
+
+        .tabs {
+            --bulma-tabs-border-bottom-color: #ed1b24ff;
         }
     </style>
 </head>
@@ -64,7 +68,7 @@
             </div>
         </div>
     </nav>
-    <section class="header1">
+    <section class="header1 border">
         <div class="hero-body">
             <div>
                 <img src="/images/strictly-ballroom-solid.svg" alt="Strictly Ballroom" class="logo-header">
@@ -104,6 +108,7 @@
                 </li>
             </ul>
         </div>
+
         <div class="tab-content">
             {{{body}}}
             <div class="tab-pane" style="display: none;"></div>
