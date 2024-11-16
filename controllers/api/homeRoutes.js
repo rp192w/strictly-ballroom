@@ -4,7 +4,7 @@ const router = require('express').Router();
 // Home page route
 router.get('/', async (req, res) => {
   try {
-    res.render('about', { title: 'About Us', logged_in: req.session.logged_in });
+    res.render('about', { title: 'About Us' });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -12,12 +12,12 @@ router.get('/', async (req, res) => {
 
 // About page route
 router.get('/about', (req, res) => {
-  res.render('about', { title: 'About Us', logged_in: req.session.logged_in });
+  res.render('about', { title: 'About Us' });
 });
 
 // Calendar page route
 router.get('/calendar', (req, res) => {
-  res.render('calendar', { title: 'Calendar', logged_in: req.session.logged_in });
+  res.render('calendar', { title: 'Calendar' });
 });
 
 // Contact page route
@@ -33,12 +33,12 @@ router.get('/contact', (req, res) => {
 
 // FAQ page route
 router.get('/faq', (req, res) => {
-  res.render('faq', { title: 'FAQ', logged_in: req.session.logged_in });
+  res.render('faq', { title: 'FAQ' });
 });
 
 // Rent Space page route
 router.get('/rentspace', (req, res) => {
-  res.render('rentspace', { title: 'Rent Space', logged_in: req.session.logged_in });
+  res.render('rentspace', { title: 'Rent Space' });
 });
 
 // Gallery page route
