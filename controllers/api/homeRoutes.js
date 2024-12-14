@@ -27,7 +27,7 @@ router.get('/contact', (req, res) => {
     hours: "Monday - Friday: 8:00am - 9:00pm",
     address: "569 N 1200 W, Orem, Utah 84057",
     phone: "801-770-1555",
-    email: "dance@strictlyballroomutah.com"
+    email: "strictlyballroomstudio@gmail.com"
 });
 });
 
